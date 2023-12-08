@@ -1,0 +1,36 @@
+<div class="container">
+    <form [formGroup]="form">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-5">
+                <label class="form-label"> Año</label>
+                <input type="text" class="form-control" formControlName="year">
+            </div>
+            <div class="col-5">
+                <label class="form-label"> Mes </label>
+                <input type="text" class="form-control" formControlName="month">
+            </div>
+            <div class="col-2">
+                <br>
+                <button type="submit" class="btn btn-primary" (click)="operate()"> Buscar </button>
+            </div>
+        </div>
+    </form>
+    <br>
+    <br>
+    <table class="table table-hover table-sm text-center">
+        <thead class="table-dark">
+            <tr>
+                <th> Vendedor</th>
+                <th> Comisión</th>
+            </tr>
+        </thead>
+        <tBody>
+            <tr *ngFor="let pedido of pedidos">
+                <td> {{ pedido.vendedor }} </td>
+                <td> {{ pedido.comision }} </td>
+            </tr>
+        </tBody>
+    </table>
+</div>
